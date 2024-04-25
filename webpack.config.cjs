@@ -22,10 +22,6 @@ module.exports = {
   },
   module: {
     rules: [
-      { 
-        test: /\.svg$/i, 
-        use: 'svg-inline-loader' 
-      },
       {
         test: /\.(woff?2|ttf)$/i,
         use: [
@@ -48,6 +44,14 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
+      },
+      { 
+        test: /\.svg$/i, 
+        use: 'svg-inline-loader' 
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },

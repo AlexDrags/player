@@ -76,5 +76,11 @@ export function optimizePng() {
             })]))
       .pipe(gulp.dest('public/img'));
 }
-const dev = gulp.series(clean, optimizeSvg, sprite, optimizeJpg, optimizePng, createWebp);
+
+export function mvFolder() {
+  return gulp
+    .src('src/audio/**/*.mp3')
+    .pipe(gulp.dest('public/audio'));
+}
+const dev = gulp.series(clean, optimizeSvg, sprite, optimizeJpg, optimizePng, mvFolder, createWebp);
 export {dev}
